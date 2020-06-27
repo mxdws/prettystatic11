@@ -1,0 +1,22 @@
+---
+layout: layouts/default.liquid
+---
+  <header>
+    <div class="pt-16 pb-2 my-3 border-b">
+      {%- include nav.html -%}
+      <h1 class="text-4xl font-bold">Articles</h1>
+      {% if page.subtitle %}
+      <p class="font-light">{{ page.subtitle }}</p>    
+      {% endif %}
+    </div>
+  </header>  
+
+    <main>
+    {%- for post in collections.posts -%}
+    <div class="py-4">
+        <h2 class="text-xl font-bold text-red-500 hover:underline"><a href="{{ post.url | relative_url }}">{{ post.data.title }}</a></h2>
+        <h3 class="font-light text-sm text-gray-700">{{ post.data.excerpt }}</h3>
+        <h4 class="text-xs font-light italic py-1">{{ post.data.date | date: "%d %B %Y" }} by {{ post.data.author }}</h4>
+    </div>
+    {%- endfor -%}
+  </main>

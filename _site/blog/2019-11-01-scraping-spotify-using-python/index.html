@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Lato|Ubuntu&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/main.css"></head>
+<body>
+    <div class="container max-w-2xl mx-auto px-3">
+        
+<header>
+  <div class="pt-16 pb-2 my-3 border-b"><div class="nav flex py-3 text-sm font-medium">
+        <a class="font-bold hover:text-red-500" href="/">Pretty Static</a>
+        <span class="px-1 text-red-500">&bull;</span>
+        <a class="hover:text-red-500" href="/about">About</a>
+        <span class="px-1 text-red-500">&bull;</span>
+        <a class="hover:text-red-500" href="/blog">Blog</a>
+        <span class="px-1 text-red-500">&bull;</span>    
+        <a class="hover:text-red-500" href="/feed.xml">RSS</a>
+      </div>
+<h1 class="text-4xl font-bold"></h1>
+    
+  </div>
+</header>  
+
+<article class="post">
+  <div class="post-content" itemprop="articleBody">
+    <h3>This article is also posted on a website I created called <a href="https://foalio.xyz">foalio.xyz</a> - it is my thinking around how and why I wanted to make that website</h3>
+<p>My sister posted that she was keen on <a href="https://foals.co.uk">Foals</a> new album.</p>
+<p>Knowing that if she likes them, then I probably would too, I went to <a href="https://open.spotify.com/playlist/4TH8QdZAVk1FrqPSwhcgie">Spotify</a> to see the Discography of Foals. I liked the look of their album covers, but Spotify (like other sites) has so much stuff going on, it all felt crowded. So I thought it would be nice to try and put them in a grid, and see what they looked like. And Voila!</p>
+<p><img src="/assets/img/2019-11-01-scraping-spotify-using-python/spotify-foals.png" alt="Foal's Discography on Spotify"></p>
+<p>My real motivation was to do all this quickly, by writing a Python script to go to the page, get all the images from the HTML and then make the site statically using <a href="https://11ty.io">Eleventy</a>.</p>
+<h2>The Foals Goal</h2>
+<p>Spotify has an API - an Application Program Interface - which means that they sort of share their data in a way that people other than Spotify can use, to make third-party applications for example. But in order to use it, you have to sign up and register for a key, and all sorts. All I wanted was the album art work and I figured that is on the Spotify website, so I just had to find it.</p>
+<h2>View Source</h2>
+<p>My investigations started by looking at the source code. Somehow the good people as Spotify probably do not want you to do this, and where as on most websites you can right-click on the screen to find the pafge source, they've made it so as it is not that easy on theirs.</p>
+<p>Not to worry! I was looking to do this all programatically anyway, so heading over to the Terminal on my Mac, I simply typed...</p>
+<pre><code>curl https://open.spotify.com/artist/6FQqZYVfTNQ1pCqfkwVFEa &gt; foals.html
+</code></pre>
+<p>... and we're off to the races.</p>
+<p><img src="/assets/img/2019-11-01-scraping-spotify-using-python/spotify-source.png" alt="Spotify websites source code"></p>
+<h2>Extracting the data</h2>
+<p>So I've got the source code, and somehere in there is an image tag with the source address of the album cover art. I need to find it, extract the data I need, and dump that in a data file to use later.</p>
+<p>To do this, I turned to Python to do the job. There is a Python package called Beautiful Soup, which parses a web page and allows you to navigate your way through the page in a sturctured logical way, assuming the website has been developed in a structured logical way.</p>
+<p>If you do not already know, website code is written in a nested fashion, and the code - HMTL - should be written in such a way that there is a logic to the structure, so my assumption is that the Albums will be:</p>
+<ul>
+<li>Their own section which has an identifying characteristic,</li>
+<li>Be in some kind of list, and</li>
+<li>each album will have their own item in the list</li>
+</ul>
+<p>Sure enough, the albums are in a section under an <strong>h3</strong> tag, but they are not nested in that tag. There is a skewy way to get the data required though. In Python, you have to use Beautiful Soup to:</p>
+<ul>
+<li>Find the <code>h3</code> tag which has a text attribute of 'Albums'</li>
+<li>Find the <strong>parent</strong> of that element which is a <strong>section</strong> tag</li>
+<li>That section tag contains a list element and within that are individual list item elements for each album</li>
+<li>Those albums then contain data like url, album name, and importantly, the link to the album to play on Spotify. I want to make my website as a mini project, but if anybody ever visits the site, they can click the album and be taken straight to the source on Spotify.</li>
+<li>Download the picture and save it for later</li>
+</ul>
+<p>If you are interested in the Python code, this is what it looks like.</p>
+<pre><code>import json
+import requests
+from bs4 import BeautifulSoup
+
+# Open the Spotify source code file
+with open(&quot;foals.html&quot;) as fp:
+    soup = BeautifulSoup(fp,features=&quot;html.parser&quot;)
+
+# Find the h3 tag with text of Albums
+albumHeading = soup.find(&quot;h3&quot;, string=&quot;Albums&quot;)
+
+# Get the h3 tags parent section
+albumSection = albumHeading.find_parent(&quot;section&quot;)
+
+# Find all list items in the album section
+albums = albumSection.findAll(&quot;li&quot;)
+
+# Iterate through each album and get the data needed
+albumObj = []
+for album in albums:
+    atag = album.find(&quot;a&quot;)
+    href = f&quot;{atag['href']}&quot;
+    albumName = atag['alt']
+    albumSlug = albumName.replace(&quot; &quot;,&quot;-&quot;).lower()
+    albumData = atag.find(&quot;div&quot;, {&quot;class&quot;: &quot;grid-item-image&quot;})
+    albumImage = albumData['data-src']
+    albumDetails = {
+        &quot;albumName&quot;: albumName,
+        &quot;albumLink&quot;: href,
+        &quot;albumSlug&quot;: albumSlug,
+        &quot;albumImageUrl&quot;: albumImage
+    }
+
+    albumObj.append(albumDetails)
+
+    print(albumName, albumImage, href)
+
+    # Download the image at the image URL and save it in an images folder
+    pic = requests.get(f&quot;http:{albumImage}&quot;)
+    if pic.status_code == 200:
+        with open(f&quot;./assets/img/{albumSlug}.jpg&quot;, 'wb') as f:
+            f.write(pic.content)
+
+# Store all the data collected for use later on
+with open('./_data/albums.json','w') as f:
+    data = json.dump(albumObj, f)
+</code></pre>
+<p>I hope that makes sense.</p>
+<h2>Building the website</h2>
+<p>So now I've got all the data, I want to create a website which just shows the artwork in a grid for the time being. To do this I decided to use a Static Site Generator called <a href="https://11ty.io">Eleventy</a>. In the past <a href="https://prettystatic.com/2019/09/20/getting-started-with-jekyll/">I've written about how to use Jekyll</a> on my <a href="https://prettystatic.com">development blog</a>, but I wanted to branch out a bit and where as Jekyll is written in Ruby, Eleventy is written in Javascript and I needed a little project to take it for a spin. I'll briefly describe what Eleventy does for me.</p>
+<p>A Static Site Generator just takes a load of input, like structured data or text, runs it through a load of templates and then spits out a website. The downside is you have to write the templates in a templating language called Liquid, the HTML and CSS, but I've got some boilerplates to kick things off for small sites like this.</p>
+<h2>Deploy the site</h2>
+<p>The last thing is to deploy it. I use Static Site Generators because they are easy and cheap to deploy, and I tend to just use a company called <a href="https://netlify.com">Netlify</a>. They are a static host, and <a href="https://prettystatic.com/2019/10/03/4-ways-to-deploy-your-static-site-with-netlify-copy/">provide a number of ways to deploy your site</a>.</p>
+<p>In this case I just dragged my static files to their website and they did the rest.</p>
+<p>And to make it official, I bought a cheap domain name and hooked it up - <a href="https://foalio.xyz">foalio.xyz</a>. Overkill? Maybe, but it's a low cost project, and the domain cost me less than one pound, so I've made my peace with it.</p>
+<p><img src="/assets/img/2019-11-01-scraping-spotify-using-python/foalio-home.png" alt="Foalio home page"></p>
+<h2>Conclusion</h2>
+<p>I didn't do this because I'm particularly 'into' this band. I did it more because I wanted a little project to try out a few things I'd been looking at recently. I've never used beautiful soup before, so this seemed like a nice way to take it for a spin. It's pretty powerful and I'll use it again probably now I know how versatile it is and how to apply it to a situation.</p>
+<p>I doubt anyone will really see this website, but I'm glad I made it, and that's really all that matters. If, by chance, anyone does see it, I hope you enjoyed it :-)</p>
+
+  </div><a class="u-url" href="/blog/2019-11-01-scraping-spotify-using-python/" hidden></a>
+</article>
+
+
+    </div><footer class="w-full border-t border-red-500 p-6 text-center pin-b mt-6">
+  <p class="text-sm text-gray-600">Created by Martin Dawson &bull; &copy; 2019 Pretty Static</p>
+</footer>
+</body>
+</html>
