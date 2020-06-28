@@ -4,9 +4,9 @@ layout: layouts/default.liquid
 <header>
   <div class="pt-16 pb-2 my-3 border-b">
     {%- include nav.html -%}
-    <h1 class="text-4xl font-bold">{{ page.title }}</h1>
-    {% if page.subtitle %}
-    <p class="font-light">{{ page.subtitle }}</p>    
+    <h1 class="text-4xl font-bold">{{ title }}</h1>
+    {% if subtitle %}
+    <p class="font-light">{{ subtitle }}</p>    
     {% endif %}
   </div>
 </header>  
