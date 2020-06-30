@@ -211,3 +211,6 @@ Here is all the code:
 	print(json.dumps(res.json(), indent=2))
 	
 
+Here is the video I made about it:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/9mKAAWRheTA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

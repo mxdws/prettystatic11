@@ -125,3 +125,6 @@ I didn't do this because I'm particularly 'into' this band. I did it more becaus
 
 I doubt anyone will really see this website, but I'm glad I made it, and that's really all that matters. If, by chance, anyone does see it, I hope you enjoyed it :-)
 
+Here is the video I made about it:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/RrQQEhlFt5E" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
