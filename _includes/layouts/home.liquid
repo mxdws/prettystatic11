@@ -24,16 +24,13 @@ layout: layouts/default.liquid
       </div>
       {%- endif -%}
       {%- endfor -%}
-      <div class="py-4">
-        <p class="font-semibold hover:underline"><a href="/blog">More articles...</a></p>
-      </div>
 
       {% include subscribe.html %}
 
       {%- for post in collections.posts -%}
       {%- if forloop.index >= 4 -%}
       <div class="py-4">
-        {%- if forloop.index == 1 -%}
+        {%- if forloop.index == 4 -%}
         <p class="font-semibold">Older Articles</p>
         {%- endif -%}
         <h2 class="text-xl font-bold text-red-500 hover:underline"><a href="{{ post.url | relative_url }}">{{ post.data.title }}</a></h2>
