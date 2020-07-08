@@ -45,9 +45,9 @@ The process of referencing items in a list in Python is called Slicing. And the 
 
     list[start:stop:step]
 
-`start` is the element to start from,
-`stop` is where you want your fetching to end
-`step` indicates the increment between each item to be sliced
+* **`start`** is the element to start from,
+* **`stop`** is where you want your fetching to end
+* **`step`** indicates the increment between each item to be sliced
 
 I say referencing items because using slices not only allows you to retrieve elements from a list, but it also allows you to change elements in a list.
 

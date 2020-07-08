@@ -121,9 +121,9 @@ Now to build this we can utilise Jekyll’s own built-in development server by t
 
 What this command does is:
 
-1. Builds the website and stores the built site in a folder called `_site`. This could also be achieved by typing `jekyll build`
-2. Serves this from port 4000 on your local host
-3. Rebuilds and republishes the site every time a file is saved
+* Builds the website and stores the built site in a folder called `_site`. This could also be achieved by typing `jekyll build`
+* Serves this from port 4000 on your local host
+* Rebuilds and republishes the site every time a file is saved
 
 For reference, never make any changes in the `_site` folder, because it will be overwritten next time you build the site.
 

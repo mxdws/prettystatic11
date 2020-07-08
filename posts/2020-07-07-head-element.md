@@ -19,9 +19,9 @@ But, the time has come when I need to roll my sleeves up and focus on those ofte
 
 Why, you may ask, do I want to dedicate an entire post to this subject? There is a lot of important stuff that is crammed into the HEAD tag that I do not currently include, and this is why I think I should spend time rectifying it:
 
-1. It might aid my sites ability to be ranked within Google search
-2. Adding metadata means I can provide more information to whoever stumbles across my pages they do appear in search results.
-3. I can add analytics which will enable me to see if anyone reads my blog posts.
+* It might aid my sites ability to be ranked within Google search
+* Adding metadata means I can provide more information to whoever stumbles across my pages they do appear in search results.
+* I can add analytics which will enable me to see if anyone reads my blog posts.
 
 Another reason why I should do it is that because my site is statically generated, if I spend time on the `HEAD` tag now, then I probably will not have to spend any addtional time on it when writing my blog posts, because most of the information will already be there - I just have to include it.
 
