@@ -2,7 +2,7 @@
 layout: layouts/page.liquid
 title: About
 subtitle: A little bit more about this site and me...
-description: Pretty Static is the development blog of Martin Dawson. It is mostly about making websites and coding in python!
+excerpt: Pretty Static is the development blog of Martin Dawson. It is mostly about making websites and coding in python!
 permalink: /about/
 ---
 
