@@ -1,9 +1,12 @@
 ---
-title: The Wonder of Static Sites
+title: Static Sites Are Great!
 excerpt: Why I am such an advocate for statically generated websites.
-date: 2019-09-30
-slug: the-wonder-of-static-sites
+date: 2020-06-28
+permalink: /static-websites-are-great/
 author: Martin Dawson
+tags:
+  - post
+  - static
 ---
 
 This website is a static site, and it is generated using a Static Site Generator, called [Jekyll](https://jekyllrb.com/). I touched upon this [in another post I wrote about Jekyll](https://prettystatic.com/2019/09/20/getting-started-with-jekyll/) but I really think static websites are both brilliant and underestimated, and I would like to spend the remainder of this post trying to say why.

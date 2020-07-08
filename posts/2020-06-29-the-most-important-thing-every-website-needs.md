@@ -1,9 +1,12 @@
 ---
 title: The Most Important Thing Every Website Needs
 excerpt: Without this, you have nothing!
-date: 2019-09-09
-slug: the-most-important-thing-every-website-needs
+date: 2020-06-29
+permalink: /the-most-important-thing-every-website-needs/
 author: Martin Dawson
+tags:
+  - post
+  - content
 ---
 
 TLDR; it's **Content**.

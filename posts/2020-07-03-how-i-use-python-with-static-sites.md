@@ -1,8 +1,13 @@
 ---
 title: Why I Use Python With Static Sites
 excerpt: How I landed on Python to assist with generating sites after stumbling with Javascript and Bash
-date: 2019-10-07
+date: 2020-07-03
+permalink: /python-with-static-sites/
 author: Martin Dawson
+tags:
+  - post
+  - python
+  - static site generators
 ---
 
 At the moment, my favourite language is Python. It just clicks for me, and it feels like a nice multi-tool of server side languages that ticks most of the boxes I need, so as I can achieve success in the projects I want to pursue. 

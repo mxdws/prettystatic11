@@ -1,9 +1,12 @@
 ---
 title: 4 Ways To Deploy Your Static Site with Netlify
 excerpt: Some different approaches to get your website live with Netlify
-date: 2019-10-03
-slug: 4-ways-to-deploy-your-static-site-with-netlify
+date: 2020-07-01
+permalink: /4-ways-to-deploy-your-static-site-with-netlify/
 author: Martin Dawson
+tags:
+  - post
+  - netlify
 ---
 
 For me, [Netlify](https://netlify.com) is brilliant. If you like building static sites and store your code on Github, then the it is a piece of cake to deploy to Netlify. As I've used it more, I've realised I needed to bend and stretch things a little, and throw in a bit of Python, to get what I want, and I figured it would be useful to demonstrate what can be done. 

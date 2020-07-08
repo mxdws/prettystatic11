@@ -1,7 +1,3 @@
 {
-    "tags": [
-      "posts"
-    ],
-    "layout": "layouts/post.liquid",
-    "permalink": "blog/{{ date | date: '%Y-%m-%d' }}-{{ slug }}/index.html"
+    "layout": "layouts/post.liquid"
   }

@@ -12,7 +12,7 @@ layout: layouts/default.liquid
   </header>  
 
     <main>
-      {%- for post in collections.posts reversed -%}
+      {%- for post in collections.posts -%}
       {%- if forloop.index < 4 -%}
       <div class="py-4">
         {%- if forloop.index == 1 -%}
@@ -29,4 +29,17 @@ layout: layouts/default.liquid
       </div>
 
       {% include subscribe.html %}
+
+      {%- for post in collections.posts -%}
+      {%- if forloop.index >= 4 -%}
+      <div class="py-4">
+        {%- if forloop.index == 1 -%}
+        <p class="font-semibold">Older Articles</p>
+        {%- endif -%}
+        <h2 class="text-xl font-bold text-red-500 hover:underline"><a href="{{ post.url | relative_url }}">{{ post.data.title }}</a></h2>
+        <h3 class="font-light text-sm text-gray-700">{{ post.data.excerpt }}</h3>
+        <h4 class="text-xs font-light italic py-1">{{ post.data.date | date: "%d %B %Y" }} by {{ post.data.author }}</h4>
+      </div>
+      {%- endif -%}
+      {%- endfor -%}
     </main>

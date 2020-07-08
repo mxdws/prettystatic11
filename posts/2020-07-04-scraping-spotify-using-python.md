@@ -1,9 +1,13 @@
 ---
 title: Scraping Spotify using Python
 excerpt: How to use the Beautiful Soup package to extract data items from a website
-date: 2019-11-01
-slug: scraping-spotify-using-python
+date: 2020-07-04
+permalink: /scraping-spotify-using-python/
 author: Martin Dawson
+tags: 
+  - post
+  - python
+  - web scraping
 ---
 
 ### This article is also posted on a website I created called [foalio.xyz](https://foalio.xyz) - it is my thinking around how and why I wanted to make that website

@@ -2,13 +2,17 @@
 title: Automate the Spotify API With Python
 excerpt: Using the Python Requests library, let's see how you might go about fetching some data from Spotify
 date: 2020-06-30
-slug: automate-the-spotify-api-with-python
+permalink: /automate-the-spotify-api-with-python/
 author: Martin Dawson
+tags:
+  - post
+  - python
+  - automation
 ---
 
 ## Automate the Spotify API With Python
 
-I made a [previous post](https://prettystatic.com/blog/2019-11-01-scraping-spotify-using-python/) and a [video to explain how to scrape the Spotify website by using the Beautiful Soup library with Python]((https://www.youtube.com/watch?v=RrQQEhlFt5E&t=114s)) so as I could return some pieces of information about a band. When I posted it to Reddit, someone made a comment asking why didn’t I just use Spotify’s API, which is a valid point.
+I made a [previous post](https://prettystatic.com/scraping-spotify-using-python/) and a [video to explain how to scrape the Spotify website by using the Beautiful Soup library with Python]((https://www.youtube.com/watch?v=RrQQEhlFt5E&t=114s)) so as I could return some pieces of information about a band. When I posted it to Reddit, someone made a comment asking why didn’t I just use Spotify’s API, which is a valid point.
 
 So I’m going to try and explain how you can use Spotify’s API with the Python Requests library, to fetch data.
 

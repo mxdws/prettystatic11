@@ -1,9 +1,13 @@
 ---
 title: Getting Started with Jekyll
 excerpt: Jekyll got me in to Static Site Generators, and remains a sensible choice for many types of website.
-date: 2019-09-20
-slug: getting-started-with-jekyll
+date: 2020-07-02
+permalink: /getting-started-with-jekyll/
 author: Martin Dawson
+tags:
+  - post
+  - jekyll
+  - static site generators
 ---
 
 Jekyll is my first love of Static Site Generators, and of building websites in general. It's a good mix of code, templates and logic which can generate simple websites pretty easily. I do not really make complex websites, and it is not the right tool for everything, but it provides power, speed and security which would suit a large variety of use cases.

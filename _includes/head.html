@@ -2,13 +2,27 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  {% include favicons.html %}
-  <link href="https://fonts.googleapis.com/css?family=Lato|Ubuntu&display=swap" rel="stylesheet">
-  <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/css/main.css">
-  <title>Pretty Static | {{ title }}</title>
+  <meta name="title" content="{{ title }}">
+  <meta name="description" content="{{ excerpt }}">
   {%- if siteConfig.ga -%}
     {%- include google-analytics.html -%}
   {%- endif -%}
+  <!-- Social Cards -->
+  <meta property="og:title" content="{{ title }} | Pretty Static" />
+  <meta property="og:description" content="{{ excerpt }}" />
+  <meta property="og:url" content="https://prettystatic.com{{ permalink }}" />
+  <meta property="og:image" content="https://prettystatic.com/assets/pssocial.jpg" />
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@mdaws100">
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png">
+  <link rel="manifest" href="/img/favicons/site.webmanifest">
+  <link rel=“canonical” href=“https://prettystatic.com{{ permalink }}” />
+  <link href="https://fonts.googleapis.com/css?family=Lato|Ubuntu&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <title>{{ title }} | Pretty Static</title>
 </head>
 

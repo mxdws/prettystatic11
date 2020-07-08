@@ -1,9 +1,13 @@
 ---
 title: Setting Up a Server for Serverless
 excerpt: Even for serverless, you sometimes need a server!
-date: 2019-09-23
-slug: setting-up-a-server-for-serverless
+date: 2020-07-05
+permalink: /serverless-server/
 author: Martin Dawson
+tags: 
+  - post
+  - server
+  - nginx
 ---
 
 As of writing, it is 2019 and the buzzwords in the last year or two have been ‘JAMStack’ and 'serverless'. I was transfixed by this concept when I first stumbled upon it, and the possibilities it offers are worthy of consideration. A big part of the JAMStack is the concept of everything being _serverless_ which appeals to me on many levels. The concept is deceptive in that there are still servers, but they are managed by other, more capable people, and I don’t have to get my hands dirty in the world of server management. It can, for example, make deployment of a static website so fast and trivial, that it blows away one of the hurdles that stand between some people and their digital aspirations.
