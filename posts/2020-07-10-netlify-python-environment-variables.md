@@ -1,7 +1,7 @@
 ---
 title: Using Environment Variables with Python in Netlify
 excerpt: Netlify has well documented examples of using their environment variables functionality with Javascript, but not much information for the other languages supported. Here is my experience of using Netlify environment variables with Python.
-date: 2020-07-11
+date: 2020-07-10
 permalink: /python-environment-variables-with-netlify/
 author: Martin Dawson
 tags:
