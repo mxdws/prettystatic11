@@ -16,7 +16,7 @@ My sister posted that she was keen on [Foals](https://foals.co.uk) new album.
 
 Knowing that if she likes them, then I probably would too, I went to [Spotify](https://open.spotify.com/playlist/4TH8QdZAVk1FrqPSwhcgie) to see the Discography of Foals. I liked the look of their album covers, but Spotify (like other sites) has so much stuff going on, it all felt crowded. So I thought it would be nice to try and put them in a grid, and see what they looked like. And Voila!
 
-![Foal's Discography on Spotify](/assets/img/2019-11-01-scraping-spotify-using-python/spotify-foals.png)
+![Foal's Discography on Spotify](/assets/img/scraping-spotify-using-python/spotify-foals.png)
 
 My real motivation was to do all this quickly, by writing a Python script to go to the page, get all the images from the HTML and then make the site statically using [Eleventy](https://11ty.io).
 
@@ -34,7 +34,7 @@ Not to worry! I was looking to do this all programatically anyway, so heading ov
 
 ... and we're off to the races.
 
-![Spotify websites source code](/assets/img/2019-11-01-scraping-spotify-using-python/spotify-source.png)
+![Spotify websites source code](/assets/img/scraping-spotify-using-python/spotify-source.png)
 
 ## Extracting the data
 
@@ -109,19 +109,19 @@ I hope that makes sense.
 
 ## Building the website
 
-So now I've got all the data, I want to create a website which just shows the artwork in a grid for the time being. To do this I decided to use a Static Site Generator called [Eleventy](https://11ty.io). In the past [I've written about how to use Jekyll](https://prettystatic.com/2019/09/20/getting-started-with-jekyll/) on my [development blog](https://prettystatic.com), but I wanted to branch out a bit and where as Jekyll is written in Ruby, Eleventy is written in Javascript and I needed a little project to take it for a spin. I'll briefly describe what Eleventy does for me.
+So now I've got all the data, I want to create a website which just shows the artwork in a grid for the time being. To do this I decided to use a Static Site Generator called [Eleventy](https://11ty.io). In the past [I've written about how to use Jekyll](https://prettystatic.com/getting-started-with-jekyll/) on my [development blog](https://prettystatic.com), but I wanted to branch out a bit and where as Jekyll is written in Ruby, Eleventy is written in Javascript and I needed a little project to take it for a spin. I'll briefly describe what Eleventy does for me.
 
 A Static Site Generator just takes a load of input, like structured data or text, runs it through a load of templates and then spits out a website. The downside is you have to write the templates in a templating language called Liquid, the HTML and CSS, but I've got some boilerplates to kick things off for small sites like this.
 
 ## Deploy the site
 
-The last thing is to deploy it. I use Static Site Generators because they are easy and cheap to deploy, and I tend to just use a company called [Netlify](https://netlify.com). They are a static host, and [provide a number of ways to deploy your site](https://prettystatic.com/2019/10/03/4-ways-to-deploy-your-static-site-with-netlify-copy/). 
+The last thing is to deploy it. I use Static Site Generators because they are easy and cheap to deploy, and I tend to just use a company called [Netlify](https://netlify.com). They are a static host, and [provide a number of ways to deploy your site](https://prettystatic.com/4-ways-to-deploy-your-static-site-with-netlify/). 
 
 In this case I just dragged my static files to their website and they did the rest.
 
 And to make it official, I bought a cheap domain name and hooked it up - [foalio.xyz](https://foalio.xyz). Overkill? Maybe, but it's a low cost project, and the domain cost me less than one pound, so I've made my peace with it.
 
-![Foalio home page](/assets/img/2019-11-01-scraping-spotify-using-python/foalio-home.png)
+![Foalio home page](/assets/img/scraping-spotify-using-python/foalio-home.png)
 
 ## Conclusion
 
