@@ -1,3 +1,7 @@
+---
+eleventyExcludeFromCollections: true
+---
+
 # Pretty Static Blog
 
 Blog written using Jekyll, and styled using [Tailwind CSS](https://tailwindcss.com)

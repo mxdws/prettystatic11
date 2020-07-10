@@ -4,6 +4,7 @@ title: About
 subtitle: A little bit more about this site and me...
 excerpt: Pretty Static is the development blog of Martin Dawson. It is mostly about making websites and coding in python!
 permalink: /about/
+changeFreq: daily
 ---
 
 ## [Pretty Static](https://prettystatic.com) is a blog about making websites.

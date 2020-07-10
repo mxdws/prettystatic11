@@ -4,6 +4,7 @@ excerpt: Some of the men and women who have influenced me the most
 date: 2019-09-14
 slug: good-people
 author: Martin Dawson
+eleventyExcludeFromCollections: true
 ---
 
 There are people out there who have influenced, and still do influence, what I do and who I aspire to be. A common thread runs through them, and the characteristics they display tend to be ones that I would like to run with - generosity, empathy, kindness, balance.

@@ -6,4 +6,5 @@ layout: layouts/blog.liquid
 title: Blog
 subtitle: All the articles!
 excerpt: Pretty Static is the development blog of Martin Dawson. It is mostly about making websites and coding in python!
+changeFreq: daily
 ---
