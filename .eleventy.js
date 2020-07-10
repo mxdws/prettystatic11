@@ -14,4 +14,5 @@ module.exports = function(eleventyConfig) {
     return collection.getFilteredByGlob('./posts/*.md')
       .filter(livePosts).reverse();
   });
+
 };

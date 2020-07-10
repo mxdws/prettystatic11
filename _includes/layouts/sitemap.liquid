@@ -1,12 +1,16 @@
 ---
 ---
 <?xml version="1.0" encoding="utf-8"?>
+{% assign today_date = 'now' | date: '%Y-%m-%d' %}
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     {% for page in collections.all %}
+        {% assign post_date = page.date | date: '%Y-%m-%d' %}
+        {% if post_date <= today_date %}
         <url>
             <loc>{{ siteConfig.url }}{{ page.url | url }}</loc>
             <lastmod>{{ page.date | date: '%Y-%m-%d' }}</lastmod>
             <changefreq>{{ page.data.changeFreq }}</changefreq>
         </url>
+        {% endif %}
     {% endfor %}
 </urlset>
