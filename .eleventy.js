@@ -4,6 +4,7 @@ module.exports = function(eleventyConfig) {
     "css", // css is not yet a recognized template extension in Eleventy
     "png" //images are saved as PNGsa at the moment
   ]);
+  eleventyConfig.addPassthroughCopy("robots.txt");
 
   const now = new Date();
 
