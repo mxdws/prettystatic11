@@ -1,4 +1,10 @@
 {
+    "title": "Welcome to Pretty Static",
+    "subtitle": "A development blog, mostly about making websites and coding in python!",
     "url": "https://www.prettystatic.com",
-    "ga": "UA-139155138-4"
+    "ga": "UA-139155138-4",
+    "author": {
+        "name": "Martin Dawson",
+        "email": "hello@prettystatic.com"
+      }
 }
