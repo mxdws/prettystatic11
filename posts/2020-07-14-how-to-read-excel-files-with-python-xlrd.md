@@ -1,6 +1,6 @@
 ---
 title: How To Read Excel Files With Python (xlrd)
-excerpt: If you need the power of Python to read, analyse, and crunch a large set of data from Microsoft Excel, one of the Python packages you can use to do this is xlrd
+excerpt: If you need the power of Python to read files from Microsoft Excel, so as you can analyse, and crunch a large set of data, one of the Python packages you can use to do this is xlrd
 date: 2020-07-14
 permalink: /how-to-read-excel-files-with-python-xlrd/
 author: Martin Dawson
@@ -14,7 +14,7 @@ tags:
 
 I LOVE Excel. For many years, in many jobs, I've used it to do all kinds of things. I've always said that it is because I am inherently lazy that I spend a lot of time using the power of Excel to do all my work for me. If my boss wanted me to take a load of data and produce a report, then I would just employ Excel to consume the data and have another worksheet working hard to turn it in to something presentable, while I pretend that I'm working really hard.
 
-But there are some occaisions where it's too hard to hack around limitations of Excel (and VBA) and you need to do a bit more heavy lifting. That's where Python can help, and in particular, a Python package called `xlrd`
+But there are some occasions where it's too hard to hack around limitations of Excel (and VBA) and you need to do a bit more heavy lifting. That's where Python can help, and in particular, a Python package called `xlrd`
 
 There are other ways to read Excel files using Python, e.g. with Pandas, but I may well cover those in separate articles.
 
