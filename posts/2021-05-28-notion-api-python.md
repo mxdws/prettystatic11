@@ -13,6 +13,13 @@ tags:
 
 I recently made a video about using the Notion API with Python. It is a quick introduction to the Notion API and how to perform some basic functions like Creating, Reading and Updating records. Here are some code snippets from the video.
 
+## Video
+
+Here is the video I made about it:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/sdn1HgxLwEg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+And here is some of the code I used:
 
 ## Initialisation
 
@@ -117,10 +124,7 @@ I recently made a video about using the Notion API with Python. It is a quick in
         print(response.status_code)
         print(response.text)
 
+## Conclusion
 
-## Video
-
-Here is the video I made about it:
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/sdn1HgxLwEg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+I hope that helps to get you started on the Notion API. I'll be making some more Notion API videos so keep an eye on the channel.
 
