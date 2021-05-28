@@ -16,106 +16,106 @@ I recently made a video about using the Notion API with Python. It is a quick in
 
 ## Initialisation
 
-  import requests, json
+    import requests, json
 
-  token = 'YOUR-SECRET-NOTION-INTEGRATION-TOKEN'
+    token = 'YOUR-SECRET-NOTION-INTEGRATION-TOKEN'
 
-  databaseId = 'YOUR-DATABASE-ID-HERE
+    databaseId = 'YOUR-DATABASE-ID-HERE
 
-  headers = {
-      "Authorization": "Bearer " + token,
-      "Content-Type": "application/json",
-      "Notion-Version": "2021-05-13"
-}
+    headers = {
+        "Authorization": "Bearer " + token,
+        "Content-Type": "application/json",
+        "Notion-Version": "2021-05-13"
+    }
 
 
 ## Read a Database
 
-  def readDatabase(databaseId, headers):
-      readUrl = f"https://api.notion.com/v1/databases/{databaseId}/query"
+    def readDatabase(databaseId, headers):
+        readUrl = f"https://api.notion.com/v1/databases/{databaseId}/query"
 
-      res = requests.request("POST", readUrl, headers=headers)
-      data = res.json()
-      print(res.status_code)
-      # print(res.text)
+        res = requests.request("POST", readUrl, headers=headers)
+        data = res.json()
+        print(res.status_code)
+        # print(res.text)
 
-      with open('./db.json', 'w', encoding='utf8') as f:
-          json.dump(data, f, ensure_ascii=False)
+        with open('./db.json', 'w', encoding='utf8') as f:
+            json.dump(data, f, ensure_ascii=False)
 
 ## Create a Page
 
-  def createPage(databaseId, headers):
+    def createPage(databaseId, headers):
 
-      createUrl = 'https://api.notion.com/v1/pages'
+        createUrl = 'https://api.notion.com/v1/pages'
 
-      newPageData = {
-          "parent": { "database_id": databaseId },
-          "properties": {
-              "Description": {
-                  "title": [
-                      {
-                          "text": {
-                              "content": "Review"
-                          }
-                      }
-                  ]
-              },
-              "Value": {
-                  "rich_text": [
-                      {
-                          "text": {
-                              "content": "Amazing"
-                          }
-                      }
-                  ]
-              },
-              "Status": {
-                  "rich_text": [
-                      {
-                          "text": {
-                              "content": "Active"
-                          }
-                      }
-                  ]
-              }
-          }
-      }
-      
-      data = json.dumps(newPageData)
-      # print(str(uploadData))
+        newPageData = {
+            "parent": { "database_id": databaseId },
+            "properties": {
+                "Description": {
+                    "title": [
+                        {
+                            "text": {
+                                "content": "Review"
+                            }
+                        }
+                    ]
+                },
+                "Value": {
+                    "rich_text": [
+                        {
+                            "text": {
+                                "content": "Amazing"
+                            }
+                        }
+                    ]
+                },
+                "Status": {
+                    "rich_text": [
+                        {
+                            "text": {
+                                "content": "Active"
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+        
+        data = json.dumps(newPageData)
+        # print(str(uploadData))
 
-      res = requests.request("POST", createUrl, headers=headers, data=data)
+        res = requests.request("POST", createUrl, headers=headers, data=data)
 
-      print(res.status_code)
-      print(res.text)
+        print(res.status_code)
+        print(res.text)
     
 
 
 ## Update a Page
 
-  def updatePage(padeId, headers):
-      updateUrl = f"https://api.notion.com/v1/pages/{pageId}"
+    def updatePage(padeId, headers):
+        updateUrl = f"https://api.notion.com/v1/pages/{pageId}"
 
-      updateData = {
-          "properties": {
-              "Value": {
-                  "rich_text": [
-                      {
-                          "text": {
-                              "content": "Pretty Good"
-                          }
-                      }
-                  ]
-              }        
-          }
-      }
+        updateData = {
+            "properties": {
+                "Value": {
+                    "rich_text": [
+                        {
+                            "text": {
+                                "content": "Pretty Good"
+                            }
+                        }
+                    ]
+                }        
+            }
+        }
 
-      data = json.dumps(updateData)
+        data = json.dumps(updateData)
 
-      response = requests.request("PATCH", updateUrl, headers=headers, data=data)
+        response = requests.request("PATCH", updateUrl, headers=headers, data=data)
 
-      print(response.status_code)
-      print(response.text)
+        print(response.status_code)
+        print(response.text)
 
 
 ## Video
