@@ -34,29 +34,29 @@ Whenever I fetch data I use the Python programming language to do it, so Python 
 
 We need some dummy data to work with, so we can make a list called `myData`:
 
-  myData = [
-    {
-      "country": "England",
-      "capital": "London"
-    },
-    {
-      "country": "France",
-      "capital": "Paris"
-    },
-    {
-      "country": "Sweden",
-      "capital": "Stockholm"
-    },
-  ]
+    myData = [
+      {
+        "country": "England",
+        "capital": "London"
+      },
+      {
+        "country": "France",
+        "capital": "Paris"
+      },
+      {
+        "country": "Sweden",
+        "capital": "Stockholm"
+      },
+    ]
 
 In order to deal with JSON in Python, the first thing to do is import the `json` module from the Python Standard Library.
 
-  import json
+    import json
 
 Within the `json` module, I am going to use `json.dump` which will quite literally dump the JSON in a file that I've opened. It looks like this.
 
-  with open("data.json", "w", encoding='utf8') as f:
-    json.dump(myData, f, ensure_ascii=False)
+    with open("data.json", "w", encoding='utf8') as f:
+      json.dump(myData, f, ensure_ascii=False)
 
 Notice that I've specified the encoding as UTF-8 and also set `ensure_ascii=False` which, for me at least, sorts out some of the funny characters you get sometimes. 
 
@@ -68,8 +68,10 @@ Now we've saved some JSON to a file, and it was all pretty painless. Reading it 
 
 We are still using the `json` module, but instead of dumping the json, we are loading it.
 
-  with open('data.json') as f:
-    loadedData = json.load(f)
+```python
+with open('data.json') as f:
+  loadedData = json.load(f)
+```
 
 And that's it. We have loaded our data again and it is ready to use.
 
