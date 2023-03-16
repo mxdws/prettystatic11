@@ -14,9 +14,9 @@ layout: layouts/default.liquid
     <main>
       {%- for post in collections.posts -%}
       {%- if forloop.index < 4 -%}
-      <div class="py-4">
+      <div class="flex flex-col py-4">
         {%- if forloop.index == 1 -%}
-        <p class="font-semibold">Latest from the blog</p>
+        <p class="font-semibold">Latest</p>
         {%- endif -%}
         <a href="{{ post.url | relative_url }}">
           <h4 class="text-xs font-medium">{{ post.data.date | date: "%d %B %Y" }}</h4>
@@ -30,9 +30,9 @@ layout: layouts/default.liquid
 
       {%- for post in collections.posts -%}
       {%- if forloop.index >= 4 -%}
-      <div class="py-4">
+      <div class="flex flex-col py-4">
         {%- if forloop.index == 4 -%}
-        <p class="font-semibold">Older Articles</p>
+        <p class="font-semibold">Articles</p>
         {%- endif -%}
         <a href="{{ post.url | relative_url }}">
           <h4 class="text-xs font-medium">{{ post.data.date | date: "%d %B %Y" }}</h4>
