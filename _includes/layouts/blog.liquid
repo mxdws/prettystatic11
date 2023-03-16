@@ -13,10 +13,11 @@ layout: layouts/default.liquid
 
     <main>
     {%- for post in collections.posts -%}
-    <div class="py-4">
-        <h2 class="text-xl font-bold text-red-500 hover:underline"><a href="{{ post.url | relative_url }}">{{ post.data.title }}</a></h2>
-        <h3 class="font-light text-sm text-gray-700">{{ post.data.excerpt }}</h3>
-        <h4 class="text-xs font-light italic py-1">{{ post.data.date | date: "%d %B %Y" }} by {{ post.data.author }}</h4>
+    <div class="flex flex-col py-4">
+        <a href="{{ post.url | relative_url }}">
+          <h4 class="text-xs font-medium">{{ post.data.date | date: "%d %B %Y" }}</h4>
+          <h2 class="text-xl font-bold hover:underline">{{ post.data.title }}</h2>
+        </a>
     </div>
     {%- endfor -%}
   </main>
