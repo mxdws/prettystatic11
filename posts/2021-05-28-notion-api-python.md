@@ -23,18 +23,19 @@ And here is some of the code I used:
 
 ## Initialisation
 
-    import requests, json
+```python
+import requests, json
 
-    token = 'YOUR-SECRET-NOTION-INTEGRATION-TOKEN'
+token = 'YOUR-SECRET-NOTION-INTEGRATION-TOKEN'
 
-    databaseId = 'YOUR-DATABASE-ID-HERE
+databaseId = 'YOUR-DATABASE-ID-HERE
 
-    headers = {
-        "Authorization": "Bearer " + token,
-        "Content-Type": "application/json",
-        "Notion-Version": "2021-05-13"
-    }
-
+headers = {
+    "Authorization": "Bearer " + token,
+    "Content-Type": "application/json",
+    "Notion-Version": "2021-05-13"
+}
+```
 
 ## Read a Database
 
