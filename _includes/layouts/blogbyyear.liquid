@@ -1,0 +1,30 @@
+---
+layout: layouts/default.liquid
+---
+  <header>
+    <div class="pt-16 pb-2 my-3 border-b">
+      {%- include nav.html -%}
+      <h1 class="text-4xl font-bold">Articles</h1>
+      {% if page.subtitle %}
+      <p class="font-light">{{ page.subtitle }}</p>    
+      {% endif %}
+    </div>
+  </header>  
+
+{% for post in collections.posts %}
+  {% assign currentdate = post.data.date | date: "%Y" %}
+  {% if currentdate != date %}
+    {% unless forloop.first %}</ul>{% endunless %}
+    <div class="py-8">
+      <h1 id="y{{post.data.date | date: "%Y"}}" class="text-3xl font-bold py-3">{{ currentdate }}</h1>
+      <ul>
+    {% assign date = currentdate %}
+  {% endif %}
+        <a href="{{ post.url | relative_url }}">
+          <li class="py-2">
+            <h4 class="text-xs font-medium">{{ post.data.date | date: "%d %B %Y" }}</h4>
+            <h2 class="text-xl font-bold hover:underline">{{ post.data.title }}</h2>
+          </li>
+        </a>
+  {% if forloop.last %}</ul></div>{% endif %}
+{% endfor %}
