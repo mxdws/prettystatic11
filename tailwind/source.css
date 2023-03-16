@@ -15,7 +15,7 @@ article a {
 }
 
 article a:hover {
-    @apply text-red-500;
+    @apply text-yellow-300;
 }
 
 article pre {

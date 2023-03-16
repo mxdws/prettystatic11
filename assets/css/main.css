@@ -24,7 +24,7 @@ article a {
 
 article a:hover {
   --tw-text-opacity: 1;
-  color: rgb(239 68 68 / var(--tw-text-opacity))
+  color: rgb(253 224 71 / var(--tw-text-opacity))
 }
 
 article pre {
