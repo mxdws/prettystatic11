@@ -16,7 +16,7 @@ layout: layouts/default.liquid
       {%- if forloop.index < 4 -%}
       <div class="flex flex-col py-4">
         {%- if forloop.index == 1 -%}
-        <p class="text-3xl font-bold">Latest</p>
+        <p class="text-3xl font-bold font-underline py-2">Latest</p>
         {%- endif -%}
         <a href="{{ post.url | relative_url }}">
           <h4 class="text-xs font-medium">{{ post.data.date | date: "%d %B %Y" }}</h4>
@@ -32,7 +32,7 @@ layout: layouts/default.liquid
       {%- if forloop.index >= 4 -%}
       <div class="flex flex-col py-4">
         {%- if forloop.index == 4 -%}
-        <p class="text-3xl font-bold">Articles</p>
+        <p class="text-3xl font-bold font-underline py-2">Articles</p>
         {%- endif -%}
         <a href="{{ post.url | relative_url }}">
           <h4 class="text-xs font-medium">{{ post.data.date | date: "%d %B %Y" }}</h4>
