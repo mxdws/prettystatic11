@@ -1,9 +1,9 @@
 article p, article li {
-    @apply text-gray-700 .text-sm .py-2;
+    @apply text-white text-sm py-2;
 }
 
 article h2 {
-    @apply font-bold .py-3;
+    @apply font-bold py-3;
 }
 
 article ul {
@@ -19,5 +19,5 @@ article a:hover {
 }
 
 article pre {
-    @apply font-mono bg-gray-300 text-gray-700 rounded-sm py-1 px-2 text-xs whitespace-pre-wrap;
+    @apply font-mono bg-gray-300 text-white rounded-sm py-1 px-2 text-xs whitespace-pre-wrap;
 }
