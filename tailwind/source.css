@@ -19,5 +19,5 @@ article a:hover {
 }
 
 article pre {
-    @apply font-mono bg-gray-300 text-white rounded-sm py-1 px-2 text-xs whitespace-pre-wrap;
+    @apply font-mono bg-gray-700 text-zinc-100 rounded-sm py-1 px-2 text-xs whitespace-pre-wrap;
 }
